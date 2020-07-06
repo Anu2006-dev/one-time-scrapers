@@ -28,7 +28,7 @@ parent = content.find('div', {'class': 'col-md-8 col-sm-12 col-xs-12 pdl0'})
 child = parent.find('span').text
 
 # Step 7: split the target string if needed
-data = child.split(': ')[-1]
+*, data = child.split(': ')
 
 # Step 8: print data to console
 print(data)
@@ -67,13 +67,7 @@ link = content.find('a')['href']
 print(link)
 
 # extract ALL other but textual node data elements, e.g. HREF attribute or whatever
-links = [
-    link['href']
-    for link in
-    content.find_all('a')
-    # filter on condition if needed
-    #if link['href'] == 'https://podsearch.com/listing/rethinking-weight-loss.html'
-]
+links = [link['href'] for link in content.find_all('a')]
 print(links)
 
 
